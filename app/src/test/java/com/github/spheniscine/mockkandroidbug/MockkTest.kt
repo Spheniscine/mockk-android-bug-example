@@ -35,4 +35,18 @@ class MockkTest {
 
         assertEquals("Hello MockK", classUnderTest.openFunction())
     }
+
+    @Test
+    fun indyFunctionTest() {
+        every {classUnderTest.indyFunction()} returns "Hello MockK" // passes here unlike Android
+
+        assertEquals("Hello MockK", classUnderTest.indyFunction())
+    }
+
+    @Test
+    fun openIndyFunctionTest() {
+        every {classUnderTest.openIndyFunction()} returns "Hello MockK" // passes
+
+        assertEquals("Hello MockK", classUnderTest.openIndyFunction())
+    }
 }

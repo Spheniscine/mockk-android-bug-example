@@ -10,4 +10,8 @@ open class ClassUnderTest {
     fun function() =  dependency.generateAnswer()
 
     open fun openFunction() = dependency.generateAnswer()
+
+    fun indyFunction() = "Hello Kotlin"
+
+    open fun openIndyFunction() = "Hello Kotlin"
 }

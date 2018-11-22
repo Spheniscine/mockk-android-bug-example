@@ -13,7 +13,7 @@ class MockkAndroidTest {
 
     @Test
     fun propertyTest() {
-        every {classUnderTest.property} returns "Hello MockK" // crashes with NullPointerException
+        every {classUnderTest.property} returns "Hello MockK" // fails with NullPointerException
 
         assertEquals("Hello MockK", classUnderTest.property)
     }
@@ -27,7 +27,7 @@ class MockkAndroidTest {
 
     @Test
     fun functionTest() {
-        every {classUnderTest.function()} returns "Hello MockK" // crashes with NullPointerException
+        every {classUnderTest.function()} returns "Hello MockK" // fails with NullPointerException
 
         assertEquals("Hello MockK", classUnderTest.function())
     }
@@ -37,5 +37,19 @@ class MockkAndroidTest {
         every {classUnderTest.openFunction()} returns "Hello MockK" // passes
 
         assertEquals("Hello MockK", classUnderTest.openFunction())
+    }
+
+    @Test
+    fun indyFunctionTest() {
+        every {classUnderTest.indyFunction()} returns "Hello MockK" // fails with "Missing calls inside every{...} block"
+
+        assertEquals("Hello MockK", classUnderTest.indyFunction())
+    }
+
+    @Test
+    fun openIndyFunctionTest() {
+        every {classUnderTest.openIndyFunction()} returns "Hello MockK" // passes
+
+        assertEquals("Hello MockK", classUnderTest.openIndyFunction())
     }
 }
