@@ -11,6 +11,10 @@ open class ClassUnderTest {
 
     open fun openFunction() = dependency.generateAnswer()
 
+    val indyProperty = "Hello Kotlin"
+
+    open val openIndyProperty = "Hello Kotlin"
+
     fun indyFunction() = "Hello Kotlin"
 
     open fun openIndyFunction() = "Hello Kotlin"

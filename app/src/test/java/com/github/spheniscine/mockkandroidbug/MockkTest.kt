@@ -37,6 +37,20 @@ class MockkTest {
     }
 
     @Test
+    fun indyPropertyTest() {
+        every {classUnderTest.indyProperty} returns "Hello MockK" // passes here unlike Android
+
+        assertEquals("Hello MockK", classUnderTest.indyProperty)
+    }
+
+    @Test
+    fun openIndyPropertyTest() {
+        every {classUnderTest.openIndyProperty} returns "Hello MockK" // passes
+
+        assertEquals("Hello MockK", classUnderTest.openIndyProperty)
+    }
+
+    @Test
     fun indyFunctionTest() {
         every {classUnderTest.indyFunction()} returns "Hello MockK" // passes here unlike Android
 
